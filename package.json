@@ -2,7 +2,7 @@
   "name": "git-commit-vscode",
   "displayName": "Git提交规范",
   "description": "Git提交规范, Rakers自写工具",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.72.0"
   },
