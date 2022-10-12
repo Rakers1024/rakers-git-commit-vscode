@@ -1,0 +1,66 @@
+{
+  "name": "git-commit-vscode",
+  "displayName": "Git提交规范",
+  "description": "Git提交规范, Rakers自写工具",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "publisher": "Rakers",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:git-commit-vscode.gitCommit"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "git-commit-vscode.gitCommit",
+        "title": "Git规范提交",
+        "icon": {
+          "dark": "static/icon.svg",
+          "light": "static/icon_light.svg"
+        }
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "when": "scmProvider == git",
+          "command": "git-commit-vscode.gitCommit",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "pub": "vsce publish",
+    "vscode:prepublish": "pnpm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.72.0",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "18.8.4",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "eslint": "^8.24.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.8.4",
+    "ts-loader": "^9.4.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "@vscode/test-electron": "^2.1.5"
+  }
+}
