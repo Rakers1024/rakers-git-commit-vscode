@@ -10,6 +10,21 @@
   "categories": [
     "Other"
   ],
+  "license": "MIT",
+  "homepage": "https://github.com/Rakers1024/rakers-git-commit-vscode/blob/master/README.md",
+  "bugs": {
+    "url": "https://github.com/Rakers1024/rakers-git-commit-vscode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rakers1024/rakers-git-commit-vscode"
+  },
+  "keywords": [
+    "git",
+    "emoji",
+    "lint"
+  ],
+  "icon": "static/logo.png",
   "activationEvents": [
     "onCommand:git-commit-vscode.gitCommit"
   ],
@@ -45,7 +60,8 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "release": "npx bumpp --tag --commit"
   },
   "devDependencies": {
     "@types/vscode": "^1.72.0",

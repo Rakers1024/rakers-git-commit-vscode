@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
     }
     const types = [
       {
-        label: `使用国际规范提交`,
+        label: `📝使用国际规范提交`,
         type: "useLabel",
       },
       {
