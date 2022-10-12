@@ -2,7 +2,12 @@
 
 格式化git commit信息，方便自己项目也方便国际规范
 
-
+# 演示图片
+![](https://raw.githubusercontent.com/Rakers1024/rakers-git-commit-vscode/master/static/temp1.jpg)
+![](https://raw.githubusercontent.com/Rakers1024/rakers-git-commit-vscode/master/static/temp2.jpg)
+![](https://raw.githubusercontent.com/Rakers1024/rakers-git-commit-vscode/master/static/temp3.jpg)
+![](https://raw.githubusercontent.com/Rakers1024/rakers-git-commit-vscode/master/static/temp4.jpg)
+![](https://raw.githubusercontent.com/Rakers1024/rakers-git-commit-vscode/master/static/temp5.jpg)
 
 ## Release Notes
 
