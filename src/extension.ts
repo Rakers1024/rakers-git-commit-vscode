@@ -36,7 +36,8 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.executeCommand("workbench.view.scm");
         if (uri) {
           let selectedRepository = git.repositories.find(repository => {
-            return repository.rootUri.path === uri._rootUri.path;
+            const path = decodeURIComponent(uri?.rootUri).replace(/^file:\/\//g, "");
+            return repository.rootUri?.path === path;
           });
           if (selectedRepository) {
             prefixCommit(selectedRepository, selected.content);

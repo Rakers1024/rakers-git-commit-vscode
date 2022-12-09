@@ -16,7 +16,7 @@ export interface InputBox {
 export const enum RefType {
   Head,
   RemoteHead,
-  Tag
+  Tag,
 }
 
 export interface Ref {
@@ -76,7 +76,7 @@ export const enum Status {
   DELETED_BY_THEM,
   BOTH_ADDED,
   BOTH_DELETED,
-  BOTH_MODIFIED
+  BOTH_MODIFIED,
 }
 
 export interface Change {
@@ -119,6 +119,7 @@ export interface LogOptions {
 }
 
 export interface Repository {
+  readonly repository: Object;
   readonly rootUri: Uri;
   readonly inputBox: InputBox;
   readonly state: RepositoryState;
@@ -129,13 +130,8 @@ export interface Repository {
   setConfig(key: string, value: string): Promise<string>;
   getGlobalConfig(key: string): Promise<string>;
 
-  getObjectDetails(
-    treeish: string,
-    path: string
-  ): Promise<{ mode: string; object: string; size: number }>;
-  detectObjectType(
-    object: string
-  ): Promise<{ mimetype: string; encoding?: string }>;
+  getObjectDetails(treeish: string, path: string): Promise<{ mode: string; object: string; size: number }>;
+  detectObjectType(object: string): Promise<{ mimetype: string; encoding?: string }>;
   buffer(ref: string, path: string): Promise<Buffer>;
   show(ref: string, path: string): Promise<string>;
   getCommit(ref: string): Promise<Commit>;
@@ -173,11 +169,7 @@ export interface Repository {
 
   fetch(remote?: string, ref?: string, depth?: number): Promise<void>;
   pull(unshallow?: boolean): Promise<void>;
-  push(
-    remoteName?: string,
-    branchName?: string,
-    setUpstream?: boolean
-  ): Promise<void>;
+  push(remoteName?: string, branchName?: string, setUpstream?: boolean): Promise<void>;
 
   blame(path: string): Promise<string>;
   log(options?: LogOptions): Promise<Commit[]>;
@@ -240,5 +232,5 @@ export const enum GitErrorCodes {
   CantLockRef = "CantLockRef",
   CantRebaseMultipleBranches = "CantRebaseMultipleBranches",
   PatchDoesNotApply = "PatchDoesNotApply",
-  NoPathFound = "NoPathFound"
+  NoPathFound = "NoPathFound",
 }
