@@ -25,6 +25,9 @@
     "lint"
   ],
   "icon": "static/logo.png",
+  "activationEvents": [
+    "onCommand:git-commit-vscode.gitCommit"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
