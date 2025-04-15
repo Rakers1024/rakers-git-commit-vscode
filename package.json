@@ -4,7 +4,7 @@
   "description": "Git提交规范, Rakers自写工具",
   "version": "1.1.1",
   "engines": {
-    "vscode": "^1.98.0"
+    "vscode": "1.76.0"
   },
   "publisher": "Rakers",
   "categories": [
@@ -25,9 +25,6 @@
     "lint"
   ],
   "icon": "static/logo.png",
-  "activationEvents": [
-    "onCommand:git-commit-vscode.gitCommit"
-  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -64,7 +61,7 @@
     "release": "npx bumpp --tag --commit"
   },
   "devDependencies": {
-    "@types/vscode": "^1.98.0",
+    "@types/vscode": "1.76.0",
     "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "18.19.84",
